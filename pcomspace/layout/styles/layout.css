@@ -439,3 +439,15 @@ table a, #comments a{background-color:inherit;}
 	.hoc.split{max-width:none; width:100%;}
 	.split section{float:none; width:100%; padding:10% 5%;}
 }
+
+img {
+	width: 100px;
+	height: auto;
+	margin-top:0px;
+  }
+
+.imgfig{
+	width: 100px;
+	height:auto;
+}
+
