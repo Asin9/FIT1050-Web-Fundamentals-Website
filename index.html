@@ -18,7 +18,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ --> 
 <!-- ################################################################################################ --> 
 <!-- Top Background Image Wrapper -->
-<div class="bgded overlay" style="background-image:url('images/demo/backgrounds/01.png');"> 
+<div class="bgded overlay" style="background-image:url('images/demo/backgrounds/01.jpg');"> 
   <!-- ################################################################################################ -->
   <div class="wrapper row1">
     <header id="header" class="hoc clear"> 
@@ -133,7 +133,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ --> 
 <!-- ################################################################################################ --> 
 <!-- ################################################################################################ -->
-<div class="wrapper bgded" style="background-image:url('images/demo/backgrounds/02.png');">
+<div class="wrapper bgded" style="background-image:url('images/demo/backgrounds/02.jpg');">
 
   <div class="hoc split clear">
     <section> 
@@ -146,6 +146,9 @@ Licence URI: https://www.os-templates.com/template-terms
         <li><i class="fa-li fa fa-check-circle"></i>Veterans:&nbsp;&nbsp;$100 </li>
         <li><i class="fa-li fa fa-check-circle"></i>Juniors:&nbsp;&nbsp;$195 </li>
       </ul>
+      <br> <br>
+      <a class="btn" href="#">Register Here &raquo;</a>
+
       <!-- ################################################################################################ --> 
     </section>
   </div>
@@ -166,12 +169,22 @@ Licence URI: https://www.os-templates.com/template-terms
     <li class="one_half">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+        <style>
+          .mySlides {display:none;}
+          </style>
   
         <div class="w3-content w3-section" style="max-width:1000px" >
   
-          <img class="mySlides w3-animate-fading" src="images/demo/slideshow1.jpg" style="width:100%" >
-          <img class="mySlides w3-animate-fading" src="images/demo/slideshow2.jpg" style="width:100%">
-          <img class="mySlides w3-animate-fading" src="images/demo/slideshow3.jpg" style="width:100%">
+          <img class="mySlides" src="images/demo/slideshow1.jpg" style="width:100%">
+          <img class="mySlides" src="images/demo/slideshow2.jpg" style="width:100%">
+          <img class="mySlides" src="images/demo/slideshow3.jpg" style="width:100%">
+
+          <button class="w3-button w3-black w3-display-middle" onclick="plusDivs(-1)">&#10094;</button>
+          <button class="w3-button w3-black w3-display-right"  onclick="plusDivs(1)">&#10095;</button>
+          
+
+          
         </div>
     </li>
   </ul>
@@ -250,19 +263,22 @@ Licence URI: https://www.os-templates.com/template-terms
 <script src="layout/scripts/jquery.backtotop.js"></script> 
 <script src="layout/scripts/jquery.mobilemenu.js"></script>
 <script>
-  var myIndex = 0;
-  carousel();
-  
-  function carousel() {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";  
-    }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
-    x[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 9000);    
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
   }
+  x[slideIndex-1].style.display = "block";  
+}
   </script></body>
 </html>
